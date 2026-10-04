@@ -1,5 +1,5 @@
 build:
-	cmake -B build -DCMAKE_CXX_COMPILER=clang++
+	cmake -B build -G Ninja -DCMAKE_CXX_COMPILER=clang++
 	cmake --build build
 
 exec:

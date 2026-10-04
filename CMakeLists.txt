@@ -1,10 +1,15 @@
 cmake_minimum_required(VERSION 3.28)
 
-project(MyCpp26Project LANGUAGES CXX)
+project(LEXER_FM LANGUAGES CXX)
 
-# Создаем исполняемый файл
+set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_SCAN_FOR_MODULES ON)
+
 add_executable(lexer_fm main.cpp)
 
-# Передаем флаг C++26 (C++2c) напрямую в Clang, а также полезные предупреждения
+target_sources(lexer_fm
+    PUBLIC FILE_SET CXX_MODULES
+    FILES token.cppm
+)
 target_compile_options(lexer_fm PRIVATE -std=c++2c -stdlib=libc++ -Wall -Wextra -Wpedantic)
 target_link_options(lexer_fm PRIVATE -stdlib=libc++)
