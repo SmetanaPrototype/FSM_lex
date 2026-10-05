@@ -10,6 +10,13 @@ export namespace fsm {
 
 enum class Tok : std::uint8_t {
     End,
+    Ident,
+    Keyword,
+    IntLit,
+    StringLit,
+    CharLit,
+    Punct,
+    Unknown,
 };
 
 struct Token {
